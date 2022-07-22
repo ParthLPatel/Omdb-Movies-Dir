@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import environ
 
+# for heroku deployment requirements
+import django_heroku
+
+
 env = environ.Env()
 environ.Env.read_env()
 
@@ -116,6 +120,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# added as per deployment requirements:
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -134,3 +141,5 @@ EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 RECIPIENT_ADDRESS = env('RECIPIENT_ADDRESS')
 
 
+# Activate Django-Heroku
+django_heroku.settings(locals())

@@ -17,13 +17,13 @@
             <div class="col-12">
                 <div id="{{ id }}" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
+                        <!-- <div class="carousel-item active">
                             <div class="row">
                                 {% for movie in movies|slice:":6" %}
                                     {% include 'movies/includes/card.html' with movie=movie profile=profile%}
                                 {% endfor %}
                             </div>
-                        </div>
+                        </div> -->
                         <div class="carousel-item">
                             <div class="row">
                                 {% for movie in movies|slice:"6:12" %}
